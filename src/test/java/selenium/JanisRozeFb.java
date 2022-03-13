@@ -3,7 +3,9 @@ package selenium;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -20,7 +22,9 @@ public class JanisRozeFb {
     private final By FB_EMAIL_INPUT_FORM = By.id("email");
     private final By FB_PASSWORD_INPUT_FORM = By.id("pass");
     private final By FB_LOGIN_BTN = By.id("loginbutton");
+
     private WebDriver browser;
+
 
 
     @Test
@@ -32,12 +36,16 @@ public class JanisRozeFb {
         browser.get(HOME_PAGE_URL);
         wait.until(ExpectedConditions.elementToBeClickable(ACCEPT_COOKIES_BTN));
         browser.findElement(ACCEPT_COOKIES_BTN).click();
+
+
         browser.findElement(DROPDOWN_MENU).click();
         browser.findElement(FACEBOOK_BTN).click();
         browser.findElement(ACCEPT_FB_COOKIES_BTN).click();
         browser.findElement(FB_EMAIL_INPUT_FORM).sendKeys("annakalinina98@inbox.lv");
         browser.findElement(FB_PASSWORD_INPUT_FORM).sendKeys("Lovemyjob123");
         browser.findElement(FB_LOGIN_BTN).click();
+
+
 
     }
 }
